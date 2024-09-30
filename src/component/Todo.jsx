@@ -49,15 +49,13 @@ const Todo = () => {
   }, [todoList]);
 
   return (
-    <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">
+    <div className="bg-white flex flex-col p-6 rounded-lg shadow-lg w-full max-w-md overflow-auto">
       {/* title */}
       <div className="flex items-center mt-7 gap-2">
         <img className="w-10" src={todo_icon} alt="" />
-        <h1 className="text-3xl font-semibold text-black-300">
-          Things to Do List
-        </h1>
+        <h1 className="text-3xl font-semibold text-black-300">Things to Do List</h1>
       </div>
-
+  
       {/* input */}
       <div className="flex items-center my-7 bg-gray-200 rounded-full">
         <input
@@ -78,9 +76,9 @@ const Todo = () => {
           Add +
         </button>
       </div>
-
+  
       {/* todo list */}
-      <div>
+      <div className="space-y-4 max-h-[70vh] overflow-y-auto">
         {todoList.map((item, index) => {
           return (
             <TodoItems
@@ -96,6 +94,7 @@ const Todo = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Todo;
